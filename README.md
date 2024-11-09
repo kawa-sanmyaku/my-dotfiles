@@ -5,6 +5,8 @@ It is meant to be run in a chroot environment in Arch-based distributions; it's 
 
 It also adds NVIDIA modules to /etc/mkinitcpio.conf, kernel parameters to /etc/default/grub, and installs grub
 
+It does NOT, however, add any customization like themes, wallpapers, etc.
+
 After it's done installing packages it will ask for a time zone, generate the locale, and ask for a user name and a computer/host name, after which it'll make config files for sddm and weston to 1) explicitly tell sddm to use weston via the DisplayServer=wayland setting, and 2) enable touchpad click at the greeter (this script was written with a laptop in mind)
 
 If you want to use this script, it's better to clone it and modify as desired; make your own improvements, maybe even make your own script; I'm not a dev so I had to follow some tutorials...
