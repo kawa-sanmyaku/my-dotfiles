@@ -11,7 +11,7 @@ amd-ucode brightnessctl fastfetch firewalld git networkmanager network-manager-a
 lib32-mesa vulkan-radeon lib32-vulkan-radeon nvidia-dkms nvidia-prime nvidia-settings nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader libva-nvidia-driver \
 \
 sddm weston \
-dunst egl-wayland hyprland hyprlock kitty nemo nwg-menu polkit-kde-agent pipewire pipewire-alsa pipewire-jack pipewire-pulse pavucontrol swww waybar wireplumber wofi \
+dunst egl-wayland hyprland hyprlock kitty nemo nwg-menu polkit-kde-agent pipewire pipewire-alsa pipewire-jack pipewire-pulse pavucontrol swww waybar wireplumber wofi xdg-desktop-portal-hyprland \
 materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
 firefox inkscape krita mpd ncmpcpp wine wine-mono wine-gecko winetricks zenity
 
