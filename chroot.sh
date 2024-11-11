@@ -6,13 +6,13 @@ sed -i '/^#\[multilib]/s/^#//g' /etc/pacman.conf && sed -i '/\[multilib]/{N;s/\n
 
 pacman -Sy \
 efibootmgr grub \
-amd-ucode brightnessctl fastfetch firewalld git networkmanager network-manager-applet neovim rsync sudo \
+amd-ucode brightnessctl fastfetch firewalld git networkmanager network-manager-applet neovim power-profiles-daemon rsync sudo \
 \
 lib32-mesa vulkan-radeon lib32-vulkan-radeon nvidia-dkms nvidia-prime nvidia-settings nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader libva-nvidia-driver \
 \
 sddm weston \
 dunst egl-wayland hyprland hyprlock kitty nemo nwg-menu polkit-kde-agent pipewire pipewire-alsa pipewire-jack pipewire-pulse pavucontrol swww waybar wireplumber wofi \
-noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-font-awesome ttf-meslo-nerd \
+materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
 firefox inkscape krita mpd ncmpcpp wine wine-mono wine-gecko winetricks zenity
 
 systemctl enable firewalld
