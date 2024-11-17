@@ -77,6 +77,15 @@ enable-tap=true
 EOF
 chmod go+r /etc/xdg/weston/weston.ini
 
+# Custom
+
+read -p "Add dotfiles (Y/N)?: " choice
+case $choice in
+        [Yy] ) echo "^-^" && ./dotfiles.sh ;;
+        [Nn] ) echo "u-u" ;;
+        * ) echo "Ah?"
+esac
+
 # Finish
 
 echo "EDITOR=nvim visudo before you reboot..."
