@@ -82,7 +82,7 @@ chmod go+r /etc/xdg/weston/weston.ini
 read -p "Add dotfiles (Y/N)?: " choice
 case $choice in
         [Yy] )
-                echo "^-^" && cp -r dotfiles/. /home/$USERNAME/.config/ && chown -R $USERNAME /home/$USERNAME
+                echo "^-^" && cp -r dotfiles/. /home/$USERNAME/.config/
                 ;;
         [Nn] )
                 echo "u-u"
@@ -91,6 +91,13 @@ case $choice in
                 echo "Ah?"
                 ;;
 esac
+
+# Default face in user directory and give ownership to user
+
+cp /usr/share/sddm/faces/.face.icon /home/$USERNAME/
+chown -R $USERNAME /home/$USERNAME
+setfacl -m u:sddm:x /home/$USERNAME/
+setfacl -m u:sddm:r /home/$USERNAME/.face.icon
 
 # Finish
 
