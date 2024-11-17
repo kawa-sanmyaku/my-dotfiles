@@ -1,0 +1,22 @@
+* {
+	all: unset;
+	font-family: NotoSans;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+@import url("style.css");
+
+window {
+	background: url("../../.face.icon"), rgba(0,0,0,0.5); /* profile pic in nwg-menu ^-^ */
+	background-repeat: no-repeat;
+	background-size: 64px;
+	background-position: 10px 10px;
+	border-radius: 10px;
+}
+
+/* make space for profile pic in nwg-menu */
+
+window > box {
+	margin-top: 84px;
+}

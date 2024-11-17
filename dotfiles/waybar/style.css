@@ -5,37 +5,11 @@
 	font-size: 12px;
 }
 
-/* all windows
- * notes:
- * - window will style everything
- * - window.background will style nwg-menu only (hopefully)
- * - window#window will style wofi only (hopefully)
- * - window#waybar will style waybar only (hopefully)
- * */
+/* all windows */
 
-window.background {
-	background: url("../../.face.icon"), rgba(0,0,0,0.5); /* profile pic in nwg-menu ^-^ */
-	background-repeat: no-repeat;
-	background-size: 64px;
-	background-position: 10px 10px;
-	border-radius: 10px;
-}
-
-/* make space for anime profile pic in nwg-menu */
-
-window.background > box {
-	margin-top: 84px;
-}
-
-/* this so it won't affect waybar */
-
-window.background#waybar > box {
-	margin-top: 0px;
-}
-
-window#window,
-window#waybar {
+window {
 	background: rgba(0,0,0,0.5);
+	border-radius: 10px;
 }
 
 window#waybar {

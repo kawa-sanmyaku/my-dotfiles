@@ -30,7 +30,7 @@
 	],
 	"custom/menubutton": {
 		"format": "",
-		"on-click": "nwg-menu -d -cmd-lock hyprlock -cmd-logout 'hyprctl dispatch exit' -fm nemo -term kitty -wm hyprland -padding 0 -s '../waybar/style.css' -mb 10"
+		"on-click": "nwg-menu -d -cmd-lock hyprlock -cmd-logout 'hyprctl dispatch exit' -fm nemo -term kitty -wm hyprland -padding 0 -s '../waybar/menu.css' -mb 10"
 	},
 	"hyprland/workspaces": {
 		"disable-scroll": false,
