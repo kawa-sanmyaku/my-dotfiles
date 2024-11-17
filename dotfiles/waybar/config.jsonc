@@ -1,0 +1,177 @@
+// -*- mode: jsonc -*-
+[
+{
+	"reload_style_on_change": true,
+	"start_hidden": false,
+	"name": "bottom",
+	"layer": "top",
+	"position": "bottom",
+	"spacing": 0,
+	"modules-left": [
+		"custom/menubutton",
+		"hyprland/workspaces",
+		"wlr/taskbar"
+	],
+	"modules-right": [
+		"tray",
+		"idle_inhibitor",
+		"keyboard-state",
+		//"hyprland/language",
+		//"network",
+		"power-profiles-daemon",
+		//"cpu",
+		//"memory",
+		//"temperature",
+		"pulseaudio",
+		"backlight",
+		"battery",
+		"clock",
+		"custom/restart"
+	],
+	"custom/menubutton": {
+		"format": "",
+		"on-click": "nwg-menu -d -cmd-lock hyprlock -cmd-logout 'hyprctl dispatch exit' -fm nemo -term kitty -wm hyprland -padding 0 -s '../waybar/style.css' -mb 10"
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": false,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"format": "{name}"
+	},
+	"wlr/taskbar": {
+		"all-outputs": true,
+		"format": "{icon} {name}",
+		"icon-size": 32,
+		"on-click": "activate",
+		"on-click-right": "close"
+	},
+	"tray": {
+		"icon-size": 16,
+		"spacing": 0
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": {
+			"numlock": "#{icon}",
+			"capslock": "A{icon} "
+		},
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+	"hyprland/language": {
+		"format": "{short}"
+	},
+	"network": {
+		//"interface": "wlp2*", //(Optional) To force the use of this interface
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠"
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
+	"cpu": {
+		"format": "{usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "{}%"
+	},
+	"temperature": {
+		//"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		"format": "{temperatureC}°C"
+	},
+	"pulseaudio": {
+		//"scroll-step": 1, //%, can be a float
+		"format": "{volume}% {icon} {format_source}",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "  {volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "pavucontrol"
+	},
+	"backlight": {
+		//"device": "acpi_video1",
+		"disable-scroll": true,
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"format": "{icon}",
+		"format-alt": "{percent}%",
+		"on-scroll-up": "hyprctl dispatch -- exec brightnessctl --device=* -s set +26",
+		"on-scroll-down": "hyprctl dispatch -- exec brightnessctl --device=* -s set 26-"
+	},
+	"battery": {
+		"states": {
+			//"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}",
+		"format-alt": "{capacity}%",
+		"format-full-alt": "{capacity}%",
+		"format-charging": "",
+		"format-charging-alt": "{capacity}%",
+		"format-plugged": "",
+		"format-plugged-alt": "{capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+	"custom/restart": {
+		"format": "[Refresh]",
+		"on-click": "killall -q waybar && waybar"
+	}
+}
+]
