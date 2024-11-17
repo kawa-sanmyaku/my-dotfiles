@@ -3,11 +3,13 @@
 
 Bar: [waybar](https://github.com/Alexays/Waybar)
 
-GTK theme: [materia](https://github.com/nana-4/materia-theme)
+Explorer: [pcmanfm-qt](https://github.com/lxqt/pcmanfm-qt)
+
+GTK theme: [materia](https://github.com/nana-4/materia-theme) (not pictured)
 
 Icons: [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-Launcher: [wofi](https://sr.ht/~scoopta/wofi/) (not pictured)
+Launcher: [wofi](https://sr.ht/~scoopta/wofi/)
 
 Start menu: [nwg-menu](https://github.com/nwg-piotr/nwg-menu)
 
@@ -16,9 +18,9 @@ Wallpaper: [mitsubasa](https://f4.bcbits.com/img/0030581061_130.jpg)
 # notes
 * *The hyprland.conf includes some window rules for programs like REAPER and MuLab, you can delete those if you want*
 
-* *There is no installation script for the dotfiles themselves since it's just two directories with 4 files total (for now), so just clone and copy / paste if you wish to use them*
+* *There is no installation script for the dotfiles themselves since it's just two directories with a small number of files (for now), so just clone and copy / paste if you wish to use them*
 
-* *nwg-menu, waybar, and wofi use the same .css file*
+* *waybar and wofi use style.css, while nwg-menu imports from it into its own css file*
 
 # chroot.sh
 I made because I'm lazy >.&lt; if my system ever breaks, I don't want to have to set everything up again
