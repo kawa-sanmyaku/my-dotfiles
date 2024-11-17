@@ -81,9 +81,15 @@ chmod go+r /etc/xdg/weston/weston.ini
 
 read -p "Add dotfiles (Y/N)?: " choice
 case $choice in
-        [Yy] ) echo "^-^" && ./dotfiles.sh ;;
-        [Nn] ) echo "u-u" ;;
-        * ) echo "Ah?"
+        [Yy] )
+                echo "^-^" && cp -r dotfiles/. /home/$USERNAME/.config/ && chown -R $USERNAME /home/$USERNAME
+                ;;
+        [Nn] )
+                echo "u-u"
+                ;;
+        * )
+                echo "Ah?"
+                ;;
 esac
 
 # Finish
