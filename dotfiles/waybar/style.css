@@ -14,7 +14,7 @@
  * */
 
 window.background {
-	background: url("../../Pictures/pfp1.png"), rgba(0,0,0,0.5); /* anime profile pic in nwg-menu ^^ */
+	background: url("../../.face.icon"), rgba(0,0,0,0.5); /* profile pic in nwg-menu ^-^ */
 	background-repeat: no-repeat;
 	background-size: 64px;
 	background-position: 10px 10px;
