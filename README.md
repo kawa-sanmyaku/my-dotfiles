@@ -18,9 +18,13 @@ Wallpaper: [mitsubasa](https://f4.bcbits.com/img/0030581061_130.jpg)
 # notes
 * *The hyprland.conf includes some window rules for programs like REAPER and MuLab, you can delete those if you want*
 
-* *There is no installation script for the dotfiles themselves since it's just two directories with a small number of files (for now), so just clone and copy / paste if you wish to use them*
+* *There is no installation script for the dotfiles themselves since it's just a handful of directories with a small number of files (for now), so just clone and copy / paste if you wish to use them*
 
 * *waybar and wofi use style.css, while nwg-menu imports from it into its own css file*
+
+* *There is an issue with pcmanfm --desktop which interferes with window focus, so it won't auto-start anymore for now*
+
+* *Windows are not transparent by default anymore to save on resources, but the bar, menu and launcher still are*
 
 # chroot.sh
 I made because I'm lazy >.&lt; if my system ever breaks, I don't want to have to set everything up again
