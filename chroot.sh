@@ -6,15 +6,16 @@ sed -i '/^#\[multilib]/s/^#//g' /etc/pacman.conf && sed -i '/\[multilib]/{N;s/\n
 
 pacman -Sy \
 efibootmgr grub \
-amd-ucode brightnessctl fastfetch firewalld networkmanager network-manager-applet neovim power-profiles-daemon rsync sudo \
+amd-ucode apparmor brightnessctl fastfetch firewalld networkmanager network-manager-applet neovim power-profiles-daemon rsync sudo \
 \
 lib32-mesa vulkan-radeon lib32-vulkan-radeon nvidia-dkms nvidia-prime nvidia-settings nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader libva-nvidia-driver \
 \
 sddm weston \
-cliphist dunst egl-wayland hyprland hyprlock kitty nemo nwg-menu polkit-kde-agent pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse swww waybar wireplumber wofi xdg-desktop-portal-hyprland \
-materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme qt6ct ttf-font-awesome ttf-meslo-nerd \
-firefox grim inkscape krita mpd ncmpcpp slurp wine wine-mono wine-gecko winetricks zenity
+cliphist dunst egl-wayland hyprland hyprlock polkit-kde-agent pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse swww wireplumber xdg-desktop-portal-hyprland \
+materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
+firefox grim inkscape kitty krita mpd ncmpcpp nemo nwg-menu slurp waybar wine wine-mono wine-gecko winetricks wofi zenity
 
+systemctl enable apparmor.service
 systemctl enable firewalld
 systemctl enable NetworkManager
 systemctl enable power-profiles-daemon
@@ -22,7 +23,7 @@ systemctl enable sddm
 
 # Bootloader and stuff to make NVIDIA card work properly
 
-sed -i '/MODULES=()/s//MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf && sed -i '/loglevel=3 quiet/s//loglevel=3 quiet nvidia-drm.modeset=1 nvidia-drm.fbdev=1 nvidia.NVreg_EnableGpuFirmware=0/' /etc/default/grub
+sed -i '/MODULES=()/s//MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf && sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="/s//GRUB_CMDLINE_LINUX_DEFAULT="lsm=landlock,lockdown,yama,integrity,apparmor,bpf nvidia-drm.modeset=1 nvidia-drm.fbdev=1 nvidia.NVreg_EnableGpuFirmware=0/' /etc/default/grub
 mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 grub-mkconfig -o /boot/grub/grub.cfg
