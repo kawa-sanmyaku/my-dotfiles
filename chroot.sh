@@ -12,7 +12,7 @@ lib32-mesa vulkan-radeon lib32-vulkan-radeon nvidia-dkms nvidia-prime nvidia-set
 \
 sddm weston \
 cliphist dunst egl-wayland hyprland hyprlock kitty nemo nwg-menu polkit-kde-agent pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse swww waybar wireplumber wofi xdg-desktop-portal-hyprland \
-materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
+materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme qt6ct ttf-font-awesome ttf-meslo-nerd \
 firefox grim inkscape krita mpd ncmpcpp slurp wine wine-mono wine-gecko winetricks zenity
 
 systemctl enable firewalld
