@@ -5,13 +5,15 @@ Bar: [waybar](https://github.com/Alexays/Waybar)
 
 Explorer: [nemo](https://github.com/linuxmint/nemo)
 
-GTK theme: [materia](https://github.com/nana-4/materia-theme) (not pictured)
+GTK theme: [materia](https://github.com/nana-4/materia-theme)
 
 Icons: [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 Launcher: [wofi](https://sr.ht/~scoopta/wofi/)
 
 Start menu: [nwg-menu](https://github.com/nwg-piotr/nwg-menu)
+
+Terminal: [kitty](https://github.com/kovidgoyal/kitty)
 
 Wallpaper: [mitsubasa](https://f4.bcbits.com/img/0030581061_130.jpg)
 
@@ -25,6 +27,10 @@ Wallpaper: [mitsubasa](https://f4.bcbits.com/img/0030581061_130.jpg)
 * *Windows are not transparent by default anymore except kitty*
 
 * *Every time the terminal is cleared, fastfetch will run again, I think the fetch is aesthetic ^-^*
+
+* *The [Refresh] button will restart waybar, click after changing its config.jsonc to update*
+
+* *The wofi is slightly larger than in the screenshot; if I have nwg-menu and wofi open at the same time, every time I try to take a screenshot, wofi will shrink... it probably has something to do with window focus*
 
 # chroot.sh
 I made because I'm lazy >.&lt; if my system ever breaks, I don't want to have to set everything up again
