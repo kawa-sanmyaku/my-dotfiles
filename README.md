@@ -22,9 +22,11 @@ Wallpaper: [mitsubasa](https://f4.bcbits.com/img/0030581061_130.jpg)
 
 * *waybar and wofi use style.css, while nwg-menu imports from it into its own css file*
 
-* *There is an issue with pcmanfm --desktop which interferes with window focus, so it won't auto-start anymore for now*
+* *There is an issue with pcmanfm-qt --desktop which interferes with window focus, so it won't auto-start anymore for now*
 
-* *Windows are not transparent by default anymore to save on resources, but the bar, menu and launcher still are*
+* *Windows are not transparent by default anymore except kitty*
+
+* *Every time the terminal is cleared, fastfetch will run again, I think the fetch is aesthetic ^-^*
 
 # chroot.sh
 I made because I'm lazy >.&lt; if my system ever breaks, I don't want to have to set everything up again
