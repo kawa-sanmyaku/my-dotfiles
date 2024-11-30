@@ -26,7 +26,7 @@ systemctl enable sddm
 
 # Bootloader and stuff to make NVIDIA card work properly
 
-sed -i '/MODULES=()/s//MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf && sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="/s//GRUB_CMDLINE_LINUX_DEFAULT="lsm=landlock,lockdown,yama,integrity,apparmor,bpf nvidia-drm.modeset=1 nvidia-drm.fbdev=1 nvidia.NVreg_EnableGpuFirmware=0/' /etc/default/grub
+sed -i '/MODULES=()/s//MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf && sed -i '/GRUB_CMDLINE_LINUX_DEFAULT="/s//GRUB_CMDLINE_LINUX_DEFAULT="lsm=landlock,lockdown,yama,integrity,apparmor,bpf nvidia-drm.modeset=1 nvidia-drm.fbdev=1 nvidia.NVreg_EnableGpuFirmware=0 /' /etc/default/grub
 mkinitcpio -P
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 grub-mkconfig -o /boot/grub/grub.cfg
