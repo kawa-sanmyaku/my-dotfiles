@@ -2,7 +2,7 @@
 	all: unset;
 	font-family: NotoSans;
 	font-weight: 700;
-	font-size: 12px;
+	font-size: 12pt;
 }
 
 /* all windows */
@@ -79,12 +79,16 @@ button:selected,
 #taskbar button.active,
 
 #entry:selected {
-	background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.25)), rgba(0,0,0,0.25);
+	/* background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.25)), rgba(0,0,0,0.25); */
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
 #workspaces button.urgent,
 #taskbar button.urgent {
-	background: linear-gradient(to bottom, rgba(0,255,255,0), rgba(0,255,255,0.25));
+	/* background: linear-gradient(to bottom, rgba(0,255,255,0), rgba(0,255,255,0.25)); */
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 0px 2px #00ffff;
 }
 
 /* idk how to change the margin in nwg-menu so just make wofi the same as nwg-menu */

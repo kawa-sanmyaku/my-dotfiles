@@ -2,7 +2,7 @@
 	all: unset;
 	font-family: NotoSans;
 	font-weight: 700;
-	font-size: 12px;
+	font-size: 12pt;
 }
 
 @import url("style.css");
