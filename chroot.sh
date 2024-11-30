@@ -8,12 +8,15 @@ pacman -Sy \
 efibootmgr grub \
 amd-ucode apparmor brightnessctl fastfetch firewalld networkmanager network-manager-applet neovim power-profiles-daemon rsync sudo \
 \
-lib32-mesa vulkan-radeon lib32-vulkan-radeon nvidia-dkms nvidia-prime nvidia-settings nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader libva-nvidia-driver \
+egl-wayland lib32-mesa lib32-nvidia-utils lib32-vulkan-icd-loader lib32-vulkan-radeon libva-nvidia-driver nvidia-dkms nvidia-prime nvidia-settings nvidia-utils vulkan-icd-loader vulkan-radeon \
+\
+materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
 \
 sddm weston \
-cliphist dunst egl-wayland hyprland hyprlock polkit-kde-agent pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse swww wireplumber xdg-desktop-portal-hyprland \
-materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
-firefox grim inkscape kitty krita mpd ncmpcpp nemo nwg-menu slurp waybar wine wine-mono wine-gecko winetricks wofi zenity
+hyprland \
+dunst pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber xdg-desktop-portal-gtk xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland \
+waybar swww wofi hyprpicker cliphist nemo nemo-fileroller hyprlock \
+firefox grim inkscape kitty krita mpd ncmpcpp nwg-menu slurp wine wine-mono wine-gecko winetricks zenity
 
 systemctl enable apparmor.service
 systemctl enable firewalld
