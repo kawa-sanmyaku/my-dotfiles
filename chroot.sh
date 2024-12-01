@@ -85,18 +85,7 @@ case $choice in
                 echo "^-^"
 		cp -r dotfiles/. /home/$USERNAME/.config/
 		cp .bashrc /home/$USERNAME/
-                ;;
-        [Nn] )
-                echo "u-u"
-                ;;
-        * )
-                echo "Ah?"
-                ;;
-esac
-
-# Add pins to nwg-menu
-
-cat > /home/$USERNAME/.cache/nwg-pin-cache<<EOF
+		cat > /home/$USERNAME/.cache/nwg-pin-cache<<EOF
 nemo.desktop
 org.inkscape.Inkscape.desktop
 org.kde.krita.desktop
@@ -104,6 +93,14 @@ firefox.desktop
 org.pulseaudio.pavucontrol.desktop
 kitty.desktop
 EOF
+		;;
+	[Nn] )
+		echo "u-u"
+		;;
+	* )
+		echo "Ah?"
+		;;
+esac
 
 # Default face in user directory and give ownership to user
 
