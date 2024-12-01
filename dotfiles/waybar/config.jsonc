@@ -9,8 +9,8 @@
 	"spacing": 0,
 	"modules-left": [
 		"custom/menubutton",
-		"hyprland/workspaces",
-		"wlr/taskbar"
+		"hyprland/workspaces"//,
+		//"wlr/taskbar"
 	],
 	"modules-right": [
 		"tray",
@@ -30,7 +30,7 @@
 	],
 	"custom/menubutton": {
 		"format": "",
-		"on-click": "nwg-menu -d -cmd-lock hyprlock -cmd-logout 'hyprctl dispatch exit' -fm nemo -term kitty -wm hyprland -padding 0 -s '../waybar/menu.css' -mb 10"
+		"on-click": "nwg-menu -d -cmd-lock hyprlock -cmd-logout 'hyprctl dispatch exit' -fm nemo -mb 10 -padding 0 -s '../waybar/menu.css' -term kitty -wm hyprland"
 	},
 	"hyprland/workspaces": {
 		"disable-scroll": false,
@@ -40,7 +40,7 @@
 	},
 	"wlr/taskbar": {
 		"all-outputs": true,
-		"format": "{icon} {name}",
+		"format": "{icon}",
 		"icon-size": 32,
 		"on-click": "activate",
 		"on-click-right": "close"

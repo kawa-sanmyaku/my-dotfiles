@@ -1,3 +1,14 @@
+@define-color bg-col1 rgba(32,32,32,0.5);
+
+@define-color hl-col1 rgba(255,255,255,0.25);
+@define-color hl-col2 rgba(0,255,255,0.25);
+
+@define-color text-light #ffffff;
+
+@define-color bat-norm #ffffff;
+@define-color bat-char #00ff00;
+@define-color bat-warn #ff0000;
+
 * {
 	all: unset;
 	font-family: NotoSans;
@@ -8,8 +19,9 @@
 /* all windows */
 
 window {
-	background: rgba(0,0,0,0.5);
+	background: @bg-col1;
 	border-radius: 10px;
+	box-shadow: inset 0px 0px 0px 2px @hl-col1;
 }
 
 window#waybar {
@@ -39,22 +51,20 @@ button:hover,
 
 #entry {
 	background: transparent;
-	color: #ffffff;
+	color: @text-light;
 }
+
+/* search box */
 
 entry {
-	background: #ffffff;
+	background: @bg-col1;
 	border-radius: 10px;
-	color: #000000;
-}
-
-#scroll {
-	margin-top: 10px;
+	color: @text-light;
+	min-width: 256px;
+	min-height: 32px;
 }
 
 /* icons are 32px tall; make search boxes, menu button, workspace buttons and wofi entries also 32px tall */
-
-entry,
 
 #custom-menubutton,
 #workspaces button,
@@ -64,13 +74,7 @@ entry,
 	min-height: 32px;
 }
 
-/* make taskbar buttons wide 6:1 */
-
-#taskbar button {
-	min-width: 192px;
-}
-
-/* selected and urgent */
+/* selected */
 
 row:selected,
 button:selected,
@@ -79,16 +83,16 @@ button:selected,
 #taskbar button.active,
 
 #entry:selected {
-	/* background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.25)), rgba(0,0,0,0.25); */
 	border-radius: 10px;
-	box-shadow: inset 0px 0px 0px 2px #ffffff;
+	box-shadow: inset 0px 0px 0px 2px @hl-col1;
 }
+
+/* urgent */
 
 #workspaces button.urgent,
 #taskbar button.urgent {
-	/* background: linear-gradient(to bottom, rgba(0,255,255,0), rgba(0,255,255,0.25)); */
 	border-radius: 10px;
-	box-shadow: inset 0px 0px 0px 2px #00ffff;
+	box-shadow: inset 0px 0px 0px 2px @hl-col2;
 }
 
 /* idk how to change the margin in nwg-menu so just make wofi the same as nwg-menu */
@@ -97,11 +101,21 @@ button:selected,
 	margin: 10px;
 }
 
+#scroll {
+	margin-top: 10px;
+}
+
 #text {
 	margin: 5px;
 }
 
-/* tray and others */
+/* add margin to waybar items tray and others */
+
+/* #custom-menubutton,
+#workspaces button,
+#taskbar button {
+	margin: 10px 0px;
+} */
 
 #tray,
 #idle_inhibitor,
@@ -126,7 +140,7 @@ button:selected,
 #privacy-item.screenshare,
 #privacy-item.audio-in,
 #privacy-item.audio-out {
-	margin: 0px 16px;
+	margin: 0px 10px;
 }
 
 /* tray */
@@ -148,17 +162,17 @@ button:selected,
 }
 
 #battery.charging, #battery.plugged {
-	color: #ffff00;
+	color: @bat-char;
 }
 
 @keyframes blink {
 	to {
-		color: #ffffff;
+		color: @bat-norm;
 	}
 }
 
 #battery.critical:not(.charging) {
-	color: #ff0000;
+	color: @bat-warn;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: steps(12);

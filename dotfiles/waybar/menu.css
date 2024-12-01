@@ -1,22 +1,31 @@
-* {
-	all: unset;
-	font-family: NotoSans;
-	font-weight: 700;
-	font-size: 12pt;
-}
-
 @import url("style.css");
 
 window {
-	background: url("../../.face.icon"), rgba(0,0,0,0.5); /* profile pic in nwg-menu ^-^ */
+	background:
+		url("../../.face.icon"), /* pfp ^-^ */
+		linear-gradient(to bottom, @hl-col1 2px, rgba(0,0,0,0) 2px), /* horizontal line */
+		linear-gradient(to right, @hl-col1 2px, rgba(0,0,0,0) 2px), /* vertical line */
+		linear-gradient(to bottom, @bg-col1 0px), /* top bar bg */
+		@bg-col1; /* window bg */
 	background-repeat: no-repeat;
-	background-size: 64px;
-	background-position: 10px 10px;
+	background-size:
+		64px, /* pfp ^-^ */
+		cover, /* horizontal line */
+		cover, /* vertical line */
+		100% 84px, /* top bar bg */
+		cover; /* window bg */
+	background-position:
+		10px 10px, /* pfp ^-^ */
+		0px 82px, /* horizontal line */
+		274px 84px, /* vertical line */
+		0px 0px, /* top bar bg */
+		0px; /* window bg */
 	border-radius: 10px;
+	box-shadow: inset 0px 0px 0px 2px @hl-col1;
 }
 
 /* make space for profile pic in nwg-menu */
 
 window > box {
-	margin-top: 84px;
+	margin-top: 94px;
 }
