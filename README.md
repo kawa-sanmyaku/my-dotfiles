@@ -1,5 +1,7 @@
 # my-dotfiles
 ![alt text](https://github.com/kawa-sanmyaku/my-dotfiles/blob/main/docs/dotpic1.png)
+![alt text](https://github.com/kawa-sanmyaku/my-dotfiles/blob/main/docs/dotpic2.png)
+
 
 Bar: [waybar](https://github.com/Alexays/Waybar)
 
