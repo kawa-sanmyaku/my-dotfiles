@@ -32,8 +32,6 @@ Wallpaper: [mitsubasa](https://f4.bcbits.com/img/0030581061_130.jpg)
 
 * *The [Refresh] button will restart waybar, click after changing its config.jsonc to update*
 
-* *The wofi is slightly larger than in the screenshot; if I have nwg-menu and wofi open at the same time, every time I try to take a screenshot, wofi will shrink... it probably has something to do with window focus*
-
 # chroot.sh
 I made because I'm lazy >.&lt; if my system ever breaks, I don't want to have to set everything up again
 
