@@ -1,4 +1,5 @@
 @define-color bg-col1 rgba(32,32,32,0.5);
+@define-color bg-col2 rgba(32,32,32,0.75);
 
 @define-color hl-col1 rgba(255,255,255,0.25);
 @define-color hl-col2 rgba(0,255,255,0.25);
@@ -25,6 +26,7 @@ window {
 }
 
 window#waybar {
+	background: @bg-col2;
 	border-radius: 10px 10px 0px 0px;
 }
 
