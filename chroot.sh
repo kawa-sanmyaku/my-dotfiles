@@ -98,6 +98,17 @@ case $choice in
                 ;;
 esac
 
+# Add pins to nwg-menu
+
+cat > /home/$USERNAME/.cache/nwg-pin-cache<<EOF
+nemo.desktop
+org.inkscape.Inkscape.desktop
+org.kde.krita.desktop
+firefox.desktop
+org.pulseaudio.pavucontrol.desktop
+kitty.desktop
+EOF
+
 # Default face in user directory and give ownership to user
 
 cp /usr/share/sddm/faces/.face.icon /home/$USERNAME/
