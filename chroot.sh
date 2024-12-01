@@ -33,24 +33,20 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Locale
 
-echo -n "Timezone (Region/City)? : "
-read TIMEZONE
+read -p "Timezone (Region/City)?: " TIMEZONE
 ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 hwclock --systohc
-echo -n "Locale UTF-8 (xx_XX)? : "
-read LOCALE
+read -p "Locale UTF-8 (xx_XX)? : " LOCALE
 sed -i "/$LOCALE.UTF-8/s/^#//g" /etc/locale.gen
 locale-gen
 echo LANG=$LOCALE.UTF-8 > /etc/locale.conf
 
 # Computer name and user
 
-echo -n "What is my name? : "
-read HOSTNAME
+read -p "What is my name? : " HOSTNAME
 echo $HOSTNAME > /etc/hostname
 
-echo -n "What is your name? : "
-read USERNAME
+read -p "What is your name? : " USERNAME
 useradd -mG wheel $USERNAME
 usermod -aG input $USERNAME
 passwd $USERNAME
@@ -83,7 +79,7 @@ chmod go+r /etc/xdg/weston/weston.ini
 
 # Custom
 
-read -p "Add dotfiles (Y/N)?: " choice
+read -p "Add dotfiles (Y/N)? : " choice
 case $choice in
         [Yy] )
                 echo "^-^"
