@@ -6,17 +6,15 @@ sed -i '/^#\[multilib]/s/^#//g' /etc/pacman.conf && sed -i '/\[multilib]/{N;s/\n
 
 pacman -Sy \
 efibootmgr grub \
-amd-ucode apparmor brightnessctl fastfetch firewalld networkmanager network-manager-applet neovim power-profiles-daemon rsync sudo \
+amd-ucode apparmor brightnessctl fastfetch firewalld networkmanager neovim power-profiles-daemon sudo \
 \
 egl-wayland lib32-mesa lib32-nvidia-utils lib32-vulkan-icd-loader lib32-vulkan-radeon libva-nvidia-driver nvidia-dkms nvidia-prime nvidia-settings nvidia-utils vulkan-icd-loader vulkan-radeon \
 \
-materia-gtk-theme noto-fonts-cjk noto-fonts-emoji noto-fonts-extra papirus-icon-theme ttf-font-awesome ttf-meslo-nerd \
+noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
 \
 sddm weston \
-hyprland \
-dunst pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber xdg-desktop-portal-gtk xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland \
-waybar swww wofi hyprpicker cliphist nemo nemo-fileroller hyprlock \
-firefox grim inkscape kitty krita mpd ncmpcpp nwg-menu slurp wine wine-mono wine-gecko winetricks zenity
+plasma-meta \
+ark dolphin firefox inkscape kitty krita wine wine-mono wine-gecko winetricks zenity
 
 systemctl enable apparmor.service
 systemctl enable firewalld
@@ -62,7 +60,7 @@ cat > /etc/sddm.conf.d/sddm.conf<< EOF
 DisplayServer=wayland
 
 [Theme]
-Current=
+Current=breeze
 EnableAvatars=true
 FacesDir=/usr/share/sddm/faces
 ThemeDir=/usr/share/sddm/themes
@@ -76,31 +74,6 @@ cat > /etc/xdg/weston/weston.ini<< EOF
 enable-tap=true
 EOF
 chmod go+r /etc/xdg/weston/weston.ini
-
-# Custom
-
-read -p "Add dotfiles (Y/N)? : " choice
-case $choice in
-        [Yy] )
-                echo "^-^"
-		cp -r dotfiles/. /home/$USERNAME/.config/
-		cp .bashrc /home/$USERNAME/
-		cat > /home/$USERNAME/.cache/nwg-pin-cache<<EOF
-nemo.desktop
-org.inkscape.Inkscape.desktop
-org.kde.krita.desktop
-firefox.desktop
-org.pulseaudio.pavucontrol.desktop
-kitty.desktop
-EOF
-		;;
-	[Nn] )
-		echo "u-u"
-		;;
-	* )
-		echo "Ah?"
-		;;
-esac
 
 # Default face in user directory and give ownership to user
 
