@@ -75,6 +75,11 @@ enable-tap=true
 EOF
 chmod go+r /etc/xdg/weston/weston.ini
 
+# Add some dotfiles
+
+cp -r dotfiles/. /home/$USERNAME/.config
+cp .bashrc /home/$USERNAME/
+
 # Default face in user directory and give ownership to user
 
 cp /usr/share/sddm/faces/.face.icon /home/$USERNAME/
