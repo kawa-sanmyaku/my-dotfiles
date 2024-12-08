@@ -85,6 +85,7 @@ case $choice in
                 echo "^-^"
 		cp -r dotfiles/. /home/$USERNAME/.config/
 		cp .bashrc /home/$USERNAME/
+		mkdir /home/$USERNAME/.cache
 		cat > /home/$USERNAME/.cache/nwg-pin-cache<<EOF
 nemo.desktop
 org.inkscape.Inkscape.desktop
