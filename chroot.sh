@@ -14,10 +14,11 @@ noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
 \
 sddm weston \
 plasma-meta \
-ark dolphin firefox inkscape kitty krita wine wine-mono wine-gecko winetricks zenity
+ark dolphin firefox inkscape kitty krita qemu-deskop virt-manager wine wine-mono wine-gecko winetricks zenity
 
 systemctl enable apparmor.service
 systemctl enable firewalld
+systemctl enable libvirtd.socket
 systemctl enable NetworkManager
 systemctl enable power-profiles-daemon
 systemctl enable sddm
@@ -47,6 +48,7 @@ echo $HOSTNAME > /etc/hostname
 read -p "What is your name? : " USERNAME
 useradd -mG wheel $USERNAME
 usermod -aG input $USERNAME
+usermod -aG libvirt $USERNAME
 passwd $USERNAME
 
 echo "Set root password..."
