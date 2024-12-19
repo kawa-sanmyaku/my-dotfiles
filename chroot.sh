@@ -1,5 +1,10 @@
 #!/bin/bash
 
+read -p "Timezone (Region/City)?: " TIMEZONE
+read -p "Locale UTF-8 (xx_XX)? : " LOCALE
+read -p "What is my name? : " HOSTNAME
+read -p "What is your name? : " USERNAME
+
 sed -i '/^#\[multilib]/s/^#//g' /etc/pacman.conf && sed -i '/\[multilib]/{N;s/\n#/\n/}' /etc/pacman.conf
 
 # Install packages and enable services
@@ -14,7 +19,7 @@ noto-fonts-cjk noto-fonts-emoji noto-fonts-extra \
 \
 sddm weston \
 plasma-meta \
-ark dolphin firefox inkscape kitty krita qemu-deskop virt-manager wine wine-mono wine-gecko winetricks zenity
+ark dolphin firefox inkscape kitty krita qemu-desktop virt-manager wine wine-mono wine-gecko winetricks zenity
 
 systemctl enable apparmor.service
 systemctl enable firewalld
@@ -32,20 +37,16 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Locale
 
-read -p "Timezone (Region/City)?: " TIMEZONE
 ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 hwclock --systohc
-read -p "Locale UTF-8 (xx_XX)? : " LOCALE
 sed -i "/$LOCALE.UTF-8/s/^#//g" /etc/locale.gen
 locale-gen
 echo LANG=$LOCALE.UTF-8 > /etc/locale.conf
 
 # Computer name and user
 
-read -p "What is my name? : " HOSTNAME
 echo $HOSTNAME > /etc/hostname
 
-read -p "What is your name? : " USERNAME
 useradd -mG wheel $USERNAME
 usermod -aG input $USERNAME
 usermod -aG libvirt $USERNAME
