@@ -11,7 +11,7 @@ sed -i '/^#\[multilib]/s/^#//g' /etc/pacman.conf && sed -i '/\[multilib]/{N;s/\n
 
 pacman -Sy \
 efibootmgr grub \
-amd-ucode apparmor brightnessctl fastfetch firewalld networkmanager neovim power-profiles-daemon sudo \
+amd-ucode apparmor brightnessctl dnsmasq fastfetch firewalld networkmanager neovim power-profiles-daemon sudo \
 \
 egl-wayland lib32-mesa lib32-nvidia-utils lib32-vulkan-icd-loader lib32-vulkan-radeon libva-nvidia-driver nvidia-dkms nvidia-prime nvidia-settings nvidia-utils vulkan-icd-loader vulkan-radeon \
 \
